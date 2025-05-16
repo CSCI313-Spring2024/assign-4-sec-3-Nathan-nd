@@ -1,0 +1,11 @@
+<div class="card mb-3 shadow-sm">
+  <div class="card-body">
+    <h5 class="card-title">{{ contact.fName }} {{ contact.lName }}</h5>
+    <p class="card-text">
+      <strong>Phone:</strong> {{ contact.phoneNumber }}<br />
+      <strong>Email:</strong> {{ contact.email }}
+    </p>
+    <button class="btn btn-primary btn-sm me-2" (click)="editContact()">Edit</button>
+    <button class="btn btn-danger btn-sm" (click)="deleteContact()">Delete</button>
+  </div>
+</div>

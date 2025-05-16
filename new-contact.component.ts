@@ -6,16 +6,18 @@ import { ContactService } from '../contact.service';
 import { Contact } from '../contact.service';
 
 @Component({
+  standalone: true,
   selector: 'app-new-contact',
   imports: [CommonModule, FormsModule],
   templateUrl: './new-contact.component.html',
-  styleUrl: './new-contact.component.css'
+  styleUrls: ['./new-contact.component.css']
 })
 export class NewContactComponent {
 
-  name="";
+  fName="";
+  lName="";
   phoneNumber="";
-  emailAddress="";
+  email="";
 
   constructor(
     private contactsService: ContactService,
@@ -24,9 +26,10 @@ export class NewContactComponent {
 
   onSubmit(){
     this.contactsService.addContact({
-      name: this.name,
+      fName: this.fName;
+      lName: this.lName,
       phoneNumber: this.phoneNumber,
-      emailAddress: this.emailAddress,
+      email: this.email,
     }).subscribe(() => this.router.navigate(['home']))
   }
 
